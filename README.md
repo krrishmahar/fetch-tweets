@@ -1,8 +1,8 @@
-# fetch my tweets!
+# fetch my tweeets!
 
 ## Description
 
-The **fetch my tweets!** GitHub Action fetches your recent tweets without much hassle and updates your GitHub profile README with the latest content. This action allows you to showcase your recent tweets directly in your profile.
+The **fetch my tweeets!** GitHub Action fetches your recent tweets without much hassle and updates your GitHub profile README with the latest content. This action allows you to showcase your recent tweets directly in your profile.
 
 ## Inputs
 
@@ -36,7 +36,7 @@ To use the **fetch my tweets!** action, create a workflow in your GitHub reposit
 
 1. **Create a Workflow File**
 
-   In your repository, create a file named `.github/workflows/fetch-my-tweets.yml`.
+   In your repository, create a file named `.github/workflows/fetch-tweeets.yml`.
 
 2. **Add the Workflow Configuration**
 
@@ -58,20 +58,19 @@ To use the **fetch my tweets!** action, create a workflow in your GitHub reposit
 	        uses: actions/checkout@v3
 
 	      - name: Update README with latest articles
-	        uses: krrishmahar/fetch-my-tweets!@v1.1.0
+	        uses: krrishmahar/fetch-tweeets!@v1.0.0
 	        with:
-	                username: ${{ secrets.twitter_username }}
-			  tweet_limit: ${{ secrets.tweet_limit }}
-			  email_token: ${{ secrets.email_token }}
+	          username: john_doe
+			  tweet_limit: 4
+			  email_token: john_doe@example.com
 			  password_token: ${{ secrets.password_token }}
 			  github_token: ${{ secrets.TOKEN_GITHUB }}
-```
-
+	```
 
 
 ### Configure Secrets for fetch my tweets!
 
-To use the **fetch my tweets!** GitHub Action, you must configure your Twitter credentials and GitHub personal access token as secrets in your repository. Follow these steps to add the required secrets:
+To use the **fetch tweeets!** GitHub Action, you must configure your Twitter credentials and GitHub personal access token as secrets in your repository. Follow these steps to add the required secrets:
 
 #### Go to Your Repository Settings
 
@@ -101,3 +100,4 @@ In your `README.md` file, add the following tags where you want the tweets to ap
 <!-- TWEETS -->
 
 <!-- /TWEETS -->
+```
