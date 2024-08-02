@@ -1,0 +1,31 @@
+name: 'fetch-tweeets-in-README'
+author: 'Krrish Mahar'
+description: 'Fetch recent your tweets from X and update the user profile README.'
+inputs:
+  username:
+    description: 'Twitter or X username'
+    required: true
+  tweet_limit:
+    description: 'Number of tweets to fetched.' #current at max 5 tweets, Under work
+    required: true
+    default: 3
+  email_token:
+    description: 'Twitter or X email'
+    required: true
+  password_token:
+    description: 'Twitter or X password.'
+    required: true
+  github_token:
+    description: 'GitHub token for authentication'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.username }}
+    - ${{ inputs.email_token }}
+    - ${{ inputs.password_token }}
+    - ${{ inputs.github_token }}
+branding:
+  icon: 'align-right'
+  color: 'blue'
