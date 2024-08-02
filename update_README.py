@@ -12,7 +12,7 @@ def update_readme():
     with open('recent_tweets.md', 'r', encoding="utf-8") as ra:
         recent_tweets = ra.read()
 
-    with open('README.md', 'r', encoding="utf-8") as readme:
+    with open('test.md', 'r', encoding="utf-8") as readme:
         readme_content = readme.read()
 
     start_marker = '<!-- TWEETS -->'
@@ -31,5 +31,5 @@ def update_readme():
                        recent_tweets.strip() + "\n" +
                        readme_content[end_idx:].strip())
 
-    with open('README.md', 'w', encoding="utf-8") as readme:
+    with open('test.md', 'w', encoding="utf-8") as readme:
         readme.write(updated_content)

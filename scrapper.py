@@ -12,18 +12,17 @@ from selenium.webdriver.common.keys import Keys
 from datetime import datetime
 from dotenv import load_dotenv
 
-
 load_dotenv()
 os.environ['PATH'] = '/Driver/'
 
 # setting driver headless via chrome.Options
 chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("--headless=new") 
+chrome_options.add_argument("--headless=new")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 
-
 driver = webdriver.Chrome(options=chrome_options)
+
 
 def email_validation():
     email = os.getenv('TWITTER_EMAIL')
@@ -37,11 +36,12 @@ def email_validation():
         # Email field not found, proceed without entering email
         pass
 
+
 def user_signin():
     user = os.getenv('TWITTER_USERNAME')
     password = os.getenv('TWITTER_PASSWORD')
     driver.get(f'https://x.com/{user}/')
-    username = WebDriverWait(driver, 30).until(
+    username = WebDriverWait(driver, 20).until(
         EC.visibility_of_element_located((By.CLASS_NAME, 'r-30o5oe'))
     )
     username.send_keys(user, Keys.ENTER)
@@ -49,7 +49,7 @@ def user_signin():
     email_validation()
 
     # Find the password field and enter the password
-    password_element = WebDriverWait(driver, 30).until(
+    password_element = WebDriverWait(driver, 20).until(
         EC.visibility_of_element_located((By.NAME, 'password'))
     )
 

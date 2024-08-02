@@ -42,7 +42,7 @@ To use the **fetch my tweets!** action, create a workflow in your GitHub reposit
 
    Add the following configuration to the file:
 
-  ```yaml
+  	```yaml
    name: Update Profile README
 
 	on:
