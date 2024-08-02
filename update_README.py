@@ -2,17 +2,17 @@ def write_tweets(file_path, tweets):
     with open(file_path, 'w', encoding="utf-8") as f:
         f.write('## Some Tweets\n\n')
         for tweet in tweets:
-            f.write("```bash"+ + "\n")
+            f.write("```bash"+ "\n")
             f.write("Tweet:" + f'{tweet['text']}' + "\n")
             f.write(f"\t\t\t\t\t\t - {tweet['time']}" + "\n")
             f.write("```" + "\n")
 
 
 def update_readme():
-    with open('/recent_tweets.md', 'r', encoding="utf-8") as ra:
+    with open('recent_tweets.md', 'r', encoding="utf-8") as ra:
         recent_tweets = ra.read()
 
-    with open('/README.md', 'r', encoding="utf-8") as readme:
+    with open('README.md', 'r', encoding="utf-8") as readme:
         readme_content = readme.read()
 
     start_marker = '<!-- TWEETS -->'
@@ -31,5 +31,5 @@ def update_readme():
                        recent_tweets.strip() + "\n" +
                        readme_content[end_idx:].strip())
 
-    with open('/README.md', 'w', encoding="utf-8") as readme:
+    with open('README.md', 'w', encoding="utf-8") as readme:
         readme.write(updated_content)
