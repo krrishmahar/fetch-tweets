@@ -1,4 +1,4 @@
-name: 'fetch-tweeets-in-README'
+name: 'fetch-tweeets'
 author: 'Krrish Mahar'
 description: 'Fetch recent your tweets from X and update the user profile README.'
 inputs:
